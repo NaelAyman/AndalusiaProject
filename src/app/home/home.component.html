@@ -1,0 +1,186 @@
+<!-- Start Slider -->
+<section class="slider">
+	<owl-carousel-o [options]="sliderOptions">
+		<ng-template carouselSlide *ngFor="let slider of sliders">
+			<img src="assets/images/{{slider.image}}.png" alt="">
+			<div class="caption">
+				<img src="assets/images/caption-bg.png" alt="">
+				<div class="caption-content">
+					<h1>{{ slider.title }}</h1>
+					<p class="txt">{{ slider.text }}</p>
+					<a routerLink="" class="site-btn">Learn more</a>
+				</div>
+			</div>
+		</ng-template>
+	</owl-carousel-o>
+</section>
+<!-- End Slider -->
+
+<!-- Start Services -->
+<section class="services">
+	<div class="container">
+		<div class="head-title">
+			<h2>our services</h2>
+		</div>
+		<div class="services-content">
+			<div class="row">
+				<div class="col-lg-4 col-md-6" *ngFor="let service of services">
+					<a routerLink="" class="service">
+						<div class="img">
+							<img src="assets/images/{{ service.image }}.png" alt="">
+						</div>
+						<div class="info">
+							<h3 class="title">Service One</h3>
+							<p class="txt">
+								Preserved defective offending he daughters on or. Rejoiced prospect yet material
+								servants out answered
+								men admitted.
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-12">
+					<a routerLink="" class="site-btn">VIEW ALL SERVICES</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Services -->
+
+<!-- Start Overview -->
+<section class="overview">
+	<div class="container">
+		<div class="head-title">
+			<h2>overview</h2>
+		</div>
+		<p class="overview-txt">
+			Andalusia is one of the leading regional players in the healthcare provision space in the Middle East. With
+			a
+			network of general hospitals, specialized medical centers, and polyclinics across Egypt and Saudi Arabia,
+			Andalusia has built a unique footprint both in service spectrum and geographically. Andalusia Group for
+			Medical
+			Services was founded in 1984 by the entrepreneur Dr. Darweesh Zagzoug as a single hospital in Jeddah, Saudi
+			Arabia; and grown over 30 years to own and manage several healthcare facilities in both Saudi and Egypt. The
+			second generation family owner Dr. Hazem Zagzoug, the current CEO has made it possible for a renowned
+			financial
+			institution like the IFC to join forces to serve more than 7 million patients in the last 10 years with
+			amicable
+			quality, and creating 2000 new jobs. We are proud of our origin, our progress, as well as our partners.
+		</p>
+	</div>
+</section>
+<!-- End Overview -->
+
+<!-- Start officers -->
+<section class="officers">
+	<div class="container">
+		<div class="head-title">
+			<h2>Executives Officers</h2>
+		</div>
+		<div class="officers-content">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="main-officer">
+						<img src="assets/images/{{mainOfficer.image}}.png" alt="">
+						<div class="info">
+							<h3>{{mainOfficer.name}}</h3>
+							<p class="job">{{mainOfficer.job}}</p>
+							<p class="desc">{{mainOfficer.desc}}</p>
+							<ul class="social">
+								<li *ngFor="let icon of mainOfficer.social">
+									<a routerLink="{{icon.url}}">
+										<i class="fab fa-{{icon.icon}}"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="row">
+						<div class="col-lg-6 col-md-6" *ngFor="let officer of officers">
+							<div class="officer"
+								(click)="updatedData(officer.image, officer.name, officer.job, officer.desc, officer.social)">
+								<img src="assets/images/{{officer.image}}.png" alt="">
+								<h3>{{officer.name}}</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End officers -->
+
+<!-- Start Statistics -->
+<section class="overview statistics">
+	<div class="container">
+		<div class="head-title">
+			<h2>STATISTICS</h2>
+		</div>
+		<div class="statistics-content">
+			<div class="row">
+				<div class="col-lg-3 col-md-6" *ngFor="let statistic of statistics">
+					<div class="statistic">
+						<div class="icon">
+							<i class="fas fa-{{ statistic.icon }}"></i>
+						</div>
+						<span class="count" [countUp]="statistic.count" #counte>0</span>
+						<h4>{{ statistic.title }}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Statistics -->
+
+<!-- Start News -->
+<section class="news">
+	<div class="container">
+		<div class="head-title">
+			<h2>recent news</h2>
+		</div>
+		<div class="news-content">
+			<div class="row">
+				<div class="col-lg-4 col-md-6" *ngFor="let new of news">
+					<div class="new">
+						<div class="img">
+							<img src="assets/images/{{new.image}}.png" alt="">
+						</div>
+						<div class="info">
+							<h4 class="title">How to Improve Your Sales Volume</h4>
+							<span class="date">23 AUG, 2018</span>
+							<p class="txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat odio id
+								doloremque illum ipsum quibusdam reiciendis aperiam soluta neque laboriosam est saepe in
+								minus quo ad impedit mollitia, culpa iste.</p>
+							<a routerLink="" class="site-btn">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End News -->
+
+<!-- Start Partners -->
+<section class="partners">
+	<div class="container">
+		<div class="head-title">
+			<h2>great partners</h2>
+		</div>
+		<div class="partners-content">
+			<owl-carousel-o [options]="partnersOptions">
+				<ng-template carouselSlide *ngFor="let partner of partners">
+					<a routerLink="">
+						<img src="assets/images/{{partner.logo}}.png" alt="">
+					</a>
+				</ng-template>
+			</owl-carousel-o>
+		</div>
+	</div>
+</section>
+<!-- End Partners -->

@@ -1,0 +1,71 @@
+<div class="overlay" (click)="collapsToggle()" [ngClass]="isMenuOpen ? 'show': ''"></div>
+<!-- Start Header -->
+<header>
+	<div class="container">
+		<div class="header">
+			<a class="logo" routerLink="">
+				<img src="assets/images/logo.png" alt="">
+			</a>
+			<div class="right-content" [ngClass]="isMenuOpen ? 'nav-open' : ''">
+				<ul class="main-links">
+					<li class="link-item active">
+						<a routerLink="">{{ 'HOME' | translate }}</a>
+					</li>
+					<li class="link-item dropdown">
+						<a routerLink="">About us</a>
+						<ul class="dropdown-content">
+							<li class="link-item">
+								<a routerLink="">Our Company</a>
+							</li>
+							<li class="link-item">
+								<a routerLink="">Partners & Accreditations</a>
+							</li>
+							<li class="link-item">
+								<a routerLink="">Corporate Structure</a>
+							</li>
+						</ul>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Business Units</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Projects</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Partners</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Media&Events</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Contacts</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="">Careers</a>
+					</li>
+				</ul>
+				<ul class="other-links">
+					<li class="link-item">
+						<a routerLink="">
+							<i class="fas fa-search"></i>
+						</a>
+					</li>
+					<li class="link-item">
+						<a routerLink="" (click)="isLanguageToggle('en')" *ngIf="isLanguageChanged">
+							<img src="assets/images/en-flag.png" alt="">
+						</a>
+						<a routerLink="" (click)="isLanguageToggle('ar')" *ngIf="!isLanguageChanged">
+							<img src="assets/images/ar-flag.png" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mob-collaps" (click)="collapsToggle()" [ngClass]="isMenuOpen ? 'show' : ''">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End Header -->
