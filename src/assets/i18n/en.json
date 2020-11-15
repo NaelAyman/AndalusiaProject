@@ -1,3 +1,17 @@
 {
-  "HOME": "Home"
+  "MENU": {
+    "HOME": "Home",
+    "ABOUT": "About us",
+    "BUSINESS": "Business Units",
+    "PROJECTS": "Projects",
+    "PARTNERS": "Partners",
+    "MEDIA&EVETS": "Media&Events",
+    "CONNTACTS": "Contacts",
+    "CAREERS": "Careers",
+    "DROPDOWN": {
+      "OUR_COMPANY": "Our Company",
+      "PARTNERS&ACCREDITATIONS": "Partners & Accreditations",
+      "CORPORATE_STRUCTURE": "Corporate Structure"
+    }
+  }
 }

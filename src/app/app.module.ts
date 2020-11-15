@@ -8,7 +8,7 @@ import { CountUpModule } from 'ngx-countup';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 import { HomeComponent } from './home/home.component';
@@ -16,7 +16,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  // return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http);
 }
 
 @NgModule({
@@ -32,13 +33,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     CarouselModule,
     CountUpModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en'
-      // loader: {
-      //   provide: TranslateLoader,
-      //   useFactory: HttpLoaderFactory,
-      //   deps: [HttpClient]
-      // }
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
     })
   ],
   providers: [],

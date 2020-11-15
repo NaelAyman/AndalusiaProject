@@ -1,3 +1,17 @@
 {
-  "HOME": "الرئيسية"
+  "MENU": {
+    "HOME": "الرئيسية",
+    "ABOUT": "من نحن",
+    "BUSINESS": "وحدات العمل",
+    "PROJECTS": "مشاريعنا",
+    "PARTNERS": "عملائنا",
+    "MEDIA&EVETS": "الأحداث",
+    "CONNTACTS": "تواصل معنا",
+    "CAREERS": "الوظائف",
+    "DROPDOWN": {
+      "OUR_COMPANY": "عن الشركة",
+      "PARTNERS&ACCREDITATIONS": "الشركاء والاعتمادات",
+      "CORPORATE_STRUCTURE": "هيكل الشركة"
+    }
+  }
 }

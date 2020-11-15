@@ -9,8 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'AndalusiaGroup';
 
-  constructor(translate: TranslateService) {
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'ar']);
     translate.setDefaultLang('en');
-    translate.use('en');
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|ar/) ? browserLang : 'en');
   }
 }

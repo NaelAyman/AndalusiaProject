@@ -12,10 +12,9 @@ export class HeaderComponent implements OnInit {
   isMenuOpen: boolean = false;
   isLanguageChanged: boolean = false;
 
-  constructor(
-    private translate: TranslateService,
-    // private platform: PlatformModule
-    ) { }
+  constructor(private translate: TranslateService) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -30,35 +29,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // isLanguageToggle(lang) {
-  //   this.isLanguageChanged = !this.isLanguageChanged;
-  //   if (this.isLanguageChanged == true) {
-  //     document.body.classList.add('rtl');
-
-  //     // this.platform.setDir('ltr',true)
-
-  //     // localStorage.setItem('hdaaeq_user_lang',lang)
-  //     this.translate.setDefaultLang(lang);
-  //     this.translate.use(lang);
-  //     // this.event.publish('change_lang');
-  //   } else {
-  //     document.body.classList.remove('rtl');
-  //   }
-  // }
-
   isLanguageToggle(lang) {
     this.isLanguageChanged = !this.isLanguageChanged;
     if (lang === 'ar') {
       document.body.classList.add('rtl');
-
-      // this.platform.setDir('ltr',true)
-
-      localStorage.setItem('hdaaeq_user_lang',lang)
-      this.translate.setDefaultLang(lang);
-      this.translate.use(lang);
-      // this.event.publish('change_lang');
+      this.translate.use('ar');
     } else {
       document.body.classList.remove('rtl');
+      this.translate.use('en');
     }
   }
 
